@@ -1,1 +1,228 @@
-<h1>Próximamente</h1>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ACAB — All Chuchería Are Bastards | Snacks saludables</title>
+<meta name="description" content="ACAB: snacks saludables con actitud. Ingredientes reales, cero cuento. Pide por WhatsApp.">
+
+<!-- ============================================================
+  TODO — DATOS REALES (todo lo reemplazable vive aquí arriba):
+  1. WHATSAPP: número en el <script> al final (código país + número, sin + ni espacios).
+  2. COLORES: variables :root de abajo → colores de marca.
+  3. PRODUCTOS: nombres, descripciones y precios en las dos .producto.
+  4. IMÁGENES: subir a assets/img/ y reemplazar los <div class="ph-img">
+     por <img src="assets/img/producto-1.jpg" alt="Empaque de ...">.
+  5. LOGO: reemplazar el texto "ACAB★" del header por <img> del logo.
+  6. INSTAGRAM: enlace del footer.
+============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* TODO: paleta placeholder — cambiar por colores de marca */
+    --tinta:   #17130e;   /* casi negro */
+    --papel:   #fdf6e6;   /* fondo claro */
+    --tape:    #efb93c;   /* amarillo cinta */
+    --acento:  #d64524;   /* rojo precio/detalles */
+    --wa:      #1fa855;   /* verde WhatsApp */
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:"Archivo", system-ui, sans-serif;
+    background:var(--papel);
+    color:var(--tinta);
+    line-height:1.6;
+  }
+  h1,h2,.display{ font-family:"Archivo Black", "Archivo", sans-serif; line-height:1.05; text-transform:uppercase; }
+  a{ color:inherit; }
+  :focus-visible{ outline:3px solid var(--acento); outline-offset:3px; }
+  .wrap{ max-width:960px; margin:0 auto; padding:0 1.25rem; }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:10;
+    background:var(--tinta); color:var(--papel);
+    border-bottom:4px solid var(--tape);
+  }
+  header .wrap{ display:flex; align-items:center; justify-content:space-between; padding:.75rem 1.25rem; }
+  .logo{ font-family:"Archivo Black",sans-serif; font-size:1.4rem; letter-spacing:.05em; text-decoration:none; }
+  .logo em{ color:var(--tape); font-style:normal; }
+  nav{ display:flex; gap:1.25rem; align-items:center; }
+  nav a{ text-decoration:none; font-weight:600; font-size:.95rem; }
+  nav a:hover{ color:var(--tape); }
+
+  /* ---------- hero ---------- */
+  .hero{ padding:5rem 0 4rem; }
+  .hero .eyebrow{
+    display:inline-block; background:var(--tinta); color:var(--tape);
+    font-weight:600; font-size:.85rem; letter-spacing:.15em; text-transform:uppercase;
+    padding:.25rem .75rem; margin-bottom:1.5rem; transform:rotate(-1.5deg);
+  }
+  .hero h1{ font-size:clamp(2.4rem, 7vw, 4.5rem); max-width:14ch; }
+  .hero h1 span{ color:var(--acento); }
+  .hero p{ max-width:52ch; margin:1.5rem 0 2rem; font-size:1.1rem; }
+  .btn{
+    display:inline-block; text-decoration:none; font-weight:600;
+    background:var(--tinta); color:var(--papel);
+    padding:.9rem 1.6rem; border:3px solid var(--tinta);
+  }
+  .btn:hover{ background:var(--papel); color:var(--tinta); }
+
+  /* ---------- cinta marquee (elemento firma) ---------- */
+  .tape{
+    background:var(--tape); color:var(--tinta);
+    border-top:3px solid var(--tinta); border-bottom:3px solid var(--tinta);
+    transform:rotate(-1.2deg) scale(1.02);
+    overflow:hidden; white-space:nowrap; padding:.5rem 0;
+    font-family:"Archivo Black",sans-serif; text-transform:uppercase; font-size:1rem; letter-spacing:.08em;
+  }
+  .tape span{ display:inline-block; animation:cinta 22s linear infinite; }
+  @keyframes cinta{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  @media (prefers-reduced-motion: reduce){
+    .tape span{ animation:none; }
+    html{ scroll-behavior:auto; }
+  }
+
+  /* ---------- productos ---------- */
+  .productos{ padding:5rem 0; }
+  .productos h2, .nosotros h2{ font-size:clamp(1.8rem,4vw,2.6rem); margin-bottom:2.5rem; }
+  .grid{ display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+  @media (max-width:700px){ .grid{ grid-template-columns:1fr; } }
+  .producto{
+    border:3px solid var(--tinta); background:#fff;
+    display:flex; flex-direction:column;
+    box-shadow:8px 8px 0 var(--tinta);
+  }
+  .ph-img{
+    aspect-ratio:4/3; display:grid; place-content:center; text-align:center;
+    border-bottom:3px solid var(--tinta);
+    background:repeating-linear-gradient(45deg, #f3ead4 0 12px, #ece1c4 12px 24px);
+    font-size:.9rem; color:#6b6250; padding:1rem;
+  }
+  .producto .info{ padding:1.5rem; display:flex; flex-direction:column; gap:.75rem; flex:1; }
+  .producto h3{ font-family:"Archivo Black",sans-serif; text-transform:uppercase; font-size:1.3rem; }
+  .precio{ font-family:"Archivo Black",sans-serif; color:var(--acento); font-size:1.2rem; margin-top:auto; }
+  .btn-wa{
+    display:flex; align-items:center; justify-content:center; gap:.5rem;
+    text-decoration:none; font-weight:600;
+    background:var(--wa); color:#fff; padding:.85rem 1rem;
+    border:3px solid var(--tinta);
+  }
+  .btn-wa:hover{ filter:brightness(1.1); }
+  .btn-wa svg{ width:1.2em; height:1.2em; fill:currentColor; }
+
+  /* ---------- nosotros ---------- */
+  .nosotros{ background:var(--tinta); color:var(--papel); padding:5rem 0; }
+  .nosotros h2 span{ color:var(--tape); }
+  .nosotros p{ max-width:60ch; font-size:1.05rem; }
+
+  /* ---------- footer ---------- */
+  footer{ padding:3rem 0; }
+  footer .wrap{ display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; align-items:center; }
+  footer small{ color:#6b6250; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">ACAB<em>★</em></a> <!-- TODO: reemplazar por logo -->
+    <nav>
+      <a href="#productos">Productos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#" data-wa data-msg="Hola, quiero hacer un pedido">Pedir</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Snacks saludables · Hechos con rabia y amor</p>
+      <h1>Todas las chucherías son unas <span>bastardas</span>.</h1>
+      <p>Menos las nuestras. <strong>ACAB — All Chuchería Are Bastards</strong> es snack
+      saludable con actitud: ingredientes reales, cero azúcar escondida, cero cuento.
+      <!-- TODO: ajustar tagline --></p>
+      <a class="btn" href="#productos">Ver los productos ↓</a>
+    </div>
+  </section>
+
+  <div class="tape" aria-hidden="true">
+    <span>ALL CHUCHERÍA ARE BASTARDS ★ INGREDIENTES REALES ★ SIN CUENTO ★ HECHO EN CASA ★ ALL CHUCHERÍA ARE BASTARDS ★ INGREDIENTES REALES ★ SIN CUENTO ★ HECHO EN CASA ★&nbsp;</span>
+  </div>
+
+  <section class="productos" id="productos">
+    <div class="wrap">
+      <h2>Los productos</h2>
+      <div class="grid">
+
+        <article class="producto">
+          <!-- TODO: <img src="assets/img/producto-1.jpg" alt="Empaque de [nombre]"> -->
+          <div class="ph-img">Foto del empaque<br>(assets/img/producto-1.jpg)</div>
+          <div class="info">
+            <h3>Producto Uno</h3> <!-- TODO: nombre real -->
+            <p>Descripción corta del producto: qué es, qué lleva y por qué es mejor
+            que la chuchería promedio. <!-- TODO --></p>
+            <p class="precio">$ 0.000</p> <!-- TODO: precio real -->
+            <a class="btn-wa" href="#" data-wa data-msg="Hola, quiero pedir Producto Uno">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-2-1.2 7.5 7.5 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4a.5.5 0 0 0 0-.4c0-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.1 5 5 0 0 0 1 2.7 11.4 11.4 0 0 0 4.4 3.9 14.8 14.8 0 0 0 1.5.5 3.6 3.6 0 0 0 1.6.1 2.7 2.7 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.2-.2-.4-.3Z"/></svg>
+              Pedir por WhatsApp
+            </a>
+          </div>
+        </article>
+
+        <article class="producto">
+          <!-- TODO: <img src="assets/img/producto-2.jpg" alt="Empaque de [nombre]"> -->
+          <div class="ph-img">Foto del empaque<br>(assets/img/producto-2.jpg)</div>
+          <div class="info">
+            <h3>Producto Dos</h3> <!-- TODO: nombre real -->
+            <p>Descripción corta del producto: qué es, qué lleva y por qué es mejor
+            que la chuchería promedio. <!-- TODO --></p>
+            <p class="precio">$ 0.000</p> <!-- TODO: precio real -->
+            <a class="btn-wa" href="#" data-wa data-msg="Hola, quiero pedir Producto Dos">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-2-1.2 7.5 7.5 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4a.5.5 0 0 0 0-.4c0-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.1 5 5 0 0 0 1 2.7 11.4 11.4 0 0 0 4.4 3.9 14.8 14.8 0 0 0 1.5.5 3.6 3.6 0 0 0 1.6.1 2.7 2.7 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.2-.2-.4-.3Z"/></svg>
+              Pedir por WhatsApp
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="nosotros" id="nosotros">
+    <div class="wrap">
+      <h2>¿Quiénes <span>somos</span>?</h2>
+      <p>Somos una pareja que se cansó de que "snack" fuera sinónimo de azúcar,
+      colorantes y letra pequeña. Así nació ACAB: chuchería honesta, hecha en casa,
+      con ingredientes que puedes pronunciar. <!-- TODO: historia real --></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="btn-wa" href="#" data-wa data-msg="Hola, quiero hacer un pedido" style="display:inline-flex">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-2-1.2 7.5 7.5 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4a.5.5 0 0 0 0-.4c0-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.1 5 5 0 0 0 1 2.7 11.4 11.4 0 0 0 4.4 3.9 14.8 14.8 0 0 0 1.5.5 3.6 3.6 0 0 0 1.6.1 2.7 2.7 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.2-.2-.4-.3Z"/></svg>
+      WhatsApp
+    </a>
+    <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a> <!-- TODO: usuario real -->
+    <small>© 2026 ACAB · Hecho con rabia y amor</small>
+  </div>
+</footer>
+
+<script>
+  // TODO: número real de WhatsApp — código de país + número, sin "+" ni espacios.
+  const WHATSAPP = "573000000000";
+  document.querySelectorAll("[data-wa]").forEach(a => {
+    a.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(a.dataset.msg)}`;
+  });
+</script>
+
+</body>
+</html>
