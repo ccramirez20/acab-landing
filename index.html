@@ -49,7 +49,7 @@
     border-bottom:4px solid var(--tape);
   }
   header .wrap{ display:flex; align-items:center; justify-content:space-between; padding:.75rem 1.25rem; }
-  .logo img{ display:block; height:88px; width:auto; padding:.4rem 0; }
+  .logo img{ display:block; height:100px; width:auto; padding:.4rem 0; }
   @media (max-width:560px){
     .logo img{ height:56px; }
     nav{ gap:.75rem; }
@@ -61,6 +61,8 @@
 
   /* ---------- hero ---------- */
   .hero{ padding:5rem 0 4rem; }
+  .hero .wrap{ display:grid; grid-template-columns:1.3fr 1fr; gap:2.5rem; align-items:center; }
+  @media (max-width:700px){ .hero .wrap{ grid-template-columns:1fr; } }
   .hero .eyebrow{
     display:inline-block; background:var(--tinta); color:var(--tape);
     font-weight:600; font-size:.85rem; letter-spacing:.15em; text-transform:uppercase;
@@ -142,11 +144,12 @@
   @media (max-width:700px){ .nosotros .wrap{ grid-template-columns:1fr; } }
   .nosotros h2 span{ color:var(--tape); }
   .nosotros p{ max-width:60ch; font-size:1.05rem; }
-  .nosotros .sticker{
+  .sticker{
     width:100%; max-width:320px; justify-self:center;
     border:3px solid var(--tinta); box-shadow:8px 8px 0 var(--tape);
     transform:rotate(2deg);
   }
+  .sticker--izq{ transform:rotate(-2deg); box-shadow:8px 8px 0 var(--acento); }
 
   /* instagram footer */
   .ig{ display:inline-flex; align-items:center; gap:.45rem; font-weight:700; font-size:1.15rem; text-decoration:none; }
@@ -175,11 +178,15 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">Snacks saludables · Hechos con amor y revolución</p>
-      <h1>All Chucherías Are <span>Bastards</span></h1>
-      <p><img class="acab-inline" src="assets/img/logo.png" alt="ACAB"> es snack
-      saludable con actitud: fruta real, sin azúcar añadida, sin conservantes, cero cuento.</p>
-      <a class="btn" href="#productos">Ver los productos ↓</a>
+      <div>
+        <p class="eyebrow">Snacks saludables · Hechos con amor y revolución</p>
+        <h1>All Chucherías Are <span>Bastards</span></h1>
+        <p><img class="acab-inline" src="assets/img/logo.png" alt="ACAB"> es snack
+        saludable con actitud: fruta real, sin azúcar añadida, sin conservantes, cero cuento.</p>
+        <a class="btn" href="#productos">Ver los productos ↓</a>
+      </div>
+      <img class="sticker sticker--izq" src="assets/img/capitan-banano-post.jpg"
+        alt="Capitán Banano aplastando una bolsa de papitas">
     </div>
   </section>
 
