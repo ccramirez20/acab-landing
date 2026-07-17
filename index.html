@@ -39,7 +39,7 @@
   a{ color:inherit; }
   :focus-visible{ outline:3px solid var(--acento); outline-offset:3px; }
   .wrap{ max-width:960px; margin:0 auto; padding:0 1.25rem; }
-  .acab-inline{ height:1.6em; width:auto; vertical-align:-.4em; }
+  .acab-inline{ height:2.1em; width:auto; vertical-align:-.65em; }
 
   /* ---------- header ---------- */
   header{
@@ -48,7 +48,12 @@
     border-bottom:4px solid var(--tape);
   }
   header .wrap{ display:flex; align-items:center; justify-content:space-between; padding:.75rem 1.25rem; }
-  .logo img{ display:block; height:76px; width:auto; padding:.4rem 0; }
+  .logo img{ display:block; height:88px; width:auto; padding:.4rem 0; }
+  @media (max-width:560px){
+    .logo img{ height:56px; }
+    nav{ gap:.75rem; }
+    nav a{ font-size:.85rem; }
+  }
   nav{ display:flex; gap:1.25rem; align-items:center; }
   nav a{ text-decoration:none; font-weight:600; font-size:.95rem; }
   nav a:hover{ color:var(--tape); }
@@ -58,7 +63,7 @@
   .hero .eyebrow{
     display:inline-block; background:var(--tinta); color:var(--tape);
     font-weight:600; font-size:.85rem; letter-spacing:.15em; text-transform:uppercase;
-    padding:.25rem .75rem; margin-bottom:1.5rem; transform:rotate(-1.5deg);
+    text-align:center; padding:.25rem .75rem; margin-bottom:1.5rem; transform:rotate(-1.5deg);
   }
   .hero h1{ font-size:clamp(2.4rem, 7vw, 4.5rem); max-width:14ch; }
   .hero h1 span{ color:var(--acento); }
@@ -78,7 +83,7 @@
     overflow:hidden; white-space:nowrap; padding:.5rem 0 .5rem 1.5rem;
     font-family:"Permanent Marker",sans-serif; text-transform:uppercase; font-size:1rem; letter-spacing:.08em;
   }
-  .tape span{ display:inline-block; animation:cinta 22s linear infinite; }
+  .tape span{ display:inline-block; animation:cinta 55s linear infinite; }
   @keyframes cinta{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
   @media (prefers-reduced-motion: reduce){
     .tape span{ animation:none; }
@@ -145,7 +150,7 @@
   /* instagram footer */
   .ig{ display:inline-flex; align-items:center; gap:.45rem; font-weight:700; font-size:1.15rem; text-decoration:none; }
   .ig:hover{ color:var(--acento); }
-  .ig svg{ width:1.3em; height:1.3em; fill:currentColor; }
+  .ig svg{ width:1.5em; height:1.5em; fill:var(--acento); }
 
   /* ---------- footer ---------- */
   footer{ padding:3rem 0; }
@@ -170,7 +175,7 @@
   <section class="hero">
     <div class="wrap">
       <p class="eyebrow">Snacks saludables · Hechos con amor y revolución</p>
-      <h1>All Chucherías Are <span>Bastards</span>.</h1>
+      <h1>All Chucherías Are <span>Bastards</span></h1>
       <p><img class="acab-inline" src="assets/img/logo.png" alt="ACAB"> es snack
       saludable con actitud: fruta real, sin azúcar añadida, sin conservantes, cero cuento.</p>
       <a class="btn" href="#productos">Ver los productos ↓</a>
@@ -191,7 +196,7 @@
           <div class="info">
             <h3>Capitán Banano</h3>
             <p>Banano con chocolate 70%, endulzado con eritritol y stevia — sí, leíste
-            bien: NO es azúcar. Sin azúcar añadida, sin conservantes. Peso neto 50 g.</p>
+            bien: NO es azúcar. Sin azúcar añadida, sin conservantes. Peso neto 50&nbsp;g.</p>
             <details class="nutri">
               <summary>Información nutricional</summary>
               <div>
@@ -229,7 +234,7 @@
           <div class="info">
             <h3>Capitana Piña</h3>
             <p>Piña deshidratada con canela. Dos ingredientes, nada más. Sin azúcar
-            añadida, sin conservantes. Peso neto 35 g.</p>
+            añadida, sin conservantes. Peso neto 35&nbsp;g.</p>
             <details class="nutri">
               <summary>Información nutricional</summary>
               <div>
