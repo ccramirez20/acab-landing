@@ -32,13 +32,18 @@ domicilio $5.000 a cargo del cliente (`.precio` y `.nota-pedido`). **Los
 precios cambian en 2027.** Cada producto muestra su etiqueta nutricional
 completa en un `<details>` (datos transcritos de los empaques en `brand/`).
 
-## Próxima sesión — por dónde arrancar
+## Publicado
 
-1. Activar GitHub Pages (Settings → Pages → rama `main`, carpeta raíz) y
-   verificar la URL publicada.
+El sitio está EN VIVO en https://ccramirez20.github.io/acab-landing/ (GitHub
+Pages, rama `main`, raíz; se redespliega solo con cada push a `main`).
+
+## Próxima sesión — ideas pendientes (ninguna urgente)
+
+1. Favicon (con el sello o el logo) y meta tags Open Graph para que el link
+   se vea con tarjeta al compartirlo por WhatsApp/Instagram.
 2. Opcional: fotos reales de los empaques físicos (las tarjetas usan los sellos
-   circulares recortados de los empaques — `assets/img/sello-*.png` — y el post
-   de Instagram de la piña va como sticker en "¿Quiénes somos?").
+   circulares recortados de los empaques — `assets/img/sello-*.png`; los posts
+   cómicos van como stickers en el hero y en "¿Quiénes somos?").
    Tipografías: Permanent Marker (títulos) + Baloo 2 (texto). Cada mención de
    "ACAB" en texto va como logo inline (`.acab-inline`).
 
