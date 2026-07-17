@@ -20,21 +20,27 @@ dueños). Objetivo: que la gente vea los productos y pida por WhatsApp.
 
 ## Estado / pendientes
 
-La página funciona pero con contenido placeholder. Todo lo reemplazable está
-marcado con `TODO` en index.html y listado en un bloque de comentario al inicio
-del archivo: número de WhatsApp, colores de marca, nombres/descripciones/precios
-de los productos, fotos de empaques (van en `assets/img/`), logo e Instagram.
+La página ya usa los datos reales de `brand/`: paleta muestreada de los empaques
+(variables `:root`), logo (`assets/img/logo.png`), productos Capitán Banano y
+Capitana Piña con descripciones sacadas de los empaques, e Instagram
+`@acab_snacks`. Los materiales fuente viven en `brand/` (logos, empaques en PDF
+y PNG hi-res, post de Instagram, misión/visión).
+
+Datos de los dueños ya cargados: WhatsApp (`WHATSAPP` en el `<script>`) y
+precios: $5.000/unidad, pedido mínimo 10 unidades (combinación libre),
+domicilio $5.000 a cargo del cliente (`.precio` y `.nota-pedido`). **Los
+precios cambian en 2027.** Cada producto muestra su etiqueta nutricional
+completa en un `<details>` (datos transcritos de los empaques en `brand/`).
 
 ## Próxima sesión — por dónde arrancar
 
-1. Pedir a los dueños: fotos de empaques + logo, códigos de color de marca,
-   nombres/descripciones/precios de los 2 productos, número de WhatsApp e
-   Instagram.
-2. Reemplazar los `TODO` de index.html con esos datos (imágenes a `assets/img/`).
-3. Ajustar la paleta placeholder a los colores reales (variables `:root`) y
-   revisar que el diseño siga funcionando con ellos.
-4. Activar GitHub Pages (Settings → Pages → rama `main`, carpeta raíz) y
+1. Activar GitHub Pages (Settings → Pages → rama `main`, carpeta raíz) y
    verificar la URL publicada.
+2. Opcional: fotos reales de los empaques físicos (las tarjetas usan los sellos
+   circulares recortados de los empaques — `assets/img/sello-*.png` — y el post
+   de Instagram de la piña va como sticker en "¿Quiénes somos?").
+   Tipografías: Permanent Marker (títulos) + Baloo 2 (texto). Cada mención de
+   "ACAB" en texto va como logo inline (`.acab-inline`).
 
 ## Convenciones
 

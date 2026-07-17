@@ -2,3 +2,6 @@ Thumbs.db
 desktop.ini
 .DS_Store
 *.log
+
+# Empaques en PDF: muy pesados para el historial de git (los originales los tienen los dueños)
+brand/*.pdf
