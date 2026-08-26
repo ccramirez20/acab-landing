@@ -39,13 +39,26 @@ Pages, rama `main`, raíz; se redespliega solo con cada push a `main`).
 
 ## Próxima sesión — ideas pendientes (ninguna urgente)
 
-1. Favicon (con el sello o el logo) y meta tags Open Graph para que el link
-   se vea con tarjeta al compartirlo por WhatsApp/Instagram.
+1. **Dominio propio** (`acabsnacks.*`, comprado en Cloudflare Registrar u
+   otro registrador — pago/cuenta del usuario, no lo hace Claude). Una vez
+   comprado:
+   1. Crear archivo `CNAME` en la raíz del repo con el dominio elegido
+      (ej. `acabsnacks.com`).
+   2. En el DNS del registrador: 4 registros A en `@` → `185.199.108.153`,
+      `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; y un CNAME
+      de `www` → `ccramirez20.github.io`.
+   3. GitHub: repo → Settings → Pages → Custom domain, escribir el dominio,
+      esperar propagación DNS y activar "Enforce HTTPS".
+   4. Actualizar `og:image` y `og:url` en `index.html` (`<head>`) al dominio
+      nuevo.
 2. Opcional: fotos reales de los empaques físicos (las tarjetas usan los sellos
    circulares recortados de los empaques — `assets/img/sello-*.png`; los posts
    cómicos van como stickers en el hero y en "¿Quiénes somos?").
    Tipografías: Permanent Marker (títulos) + Baloo 2 (texto). Cada mención de
    "ACAB" en texto va como logo inline (`.acab-inline`).
+
+Favicon (`assets/img/logo.png`) y meta tags Open Graph (título "ACAB - Snacks
+saludables") ya están en el `<head>` de `index.html`.
 
 ## Convenciones
 
