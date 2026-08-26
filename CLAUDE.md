@@ -41,19 +41,22 @@ CNAME `www`, todos en modo DNS only). GitHub Pages: rama `main`, raíz,
 a `main`. La URL vieja `https://ccramirez20.github.io/acab-landing/` sigue
 funcionando pero ya no es la oficial.
 
+Correo oficial: **contacto@acabsnacks.com** (Cloudflare Email Routing reenvía
+a `acabsnacks@gmail.com`; configurado en Gmail como "Enviar correo como" vía
+SMTP de Gmail con contraseña de aplicación, así que también se puede
+responder/enviar desde esa dirección). Aparece en el footer del sitio junto
+a WhatsApp e Instagram.
+
+Favicon (`assets/img/logo.png`) y meta tags Open Graph (título "ACAB - Snacks
+saludables") ya están en el `<head>` de `index.html`.
+
 ## Próxima sesión — ideas pendientes (ninguna urgente)
 
-1. Correo `@acabsnacks.com` (Cloudflare Email Routing para reenvío gratis, o
-   un proveedor de buzón real como Google Workspace/Zoho si necesitan enviar
-   desde esa dirección) — en curso con el dueño.
-2. Opcional: fotos reales de los empaques físicos (las tarjetas usan los sellos
+1. Opcional: fotos reales de los empaques físicos (las tarjetas usan los sellos
    circulares recortados de los empaques — `assets/img/sello-*.png`; los posts
    cómicos van como stickers en el hero y en "¿Quiénes somos?").
    Tipografías: Permanent Marker (títulos) + Baloo 2 (texto). Cada mención de
    "ACAB" en texto va como logo inline (`.acab-inline`).
-
-Favicon (`assets/img/logo.png`) y meta tags Open Graph (título "ACAB - Snacks
-saludables") ya están en el `<head>` de `index.html`.
 
 ## Convenciones
 
