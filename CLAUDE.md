@@ -34,19 +34,12 @@ completa en un `<details>` (datos transcritos de los empaques en `brand/`).
 
 ## Publicado
 
-El sitio está EN VIVO en https://ccramirez20.github.io/acab-landing/ (GitHub
-Pages, rama `main`, raíz; se redespliega solo con cada push a `main`).
-
-**Dominio propio: `acabsnacks.com`** (comprado en Cloudflare, dueño del
-proyecto). Archivo `CNAME` en la raíz del repo ya apunta ahí, y `og:image`/
-`og:url` en `index.html` ya usan `https://acabsnacks.com/`. Falta del lado de
-Cloudflare/GitHub (fuera del repo, lo hace el dueño):
-1. DNS en Cloudflare: 4 registros A en `@` → `185.199.108.153`,
-   `185.199.109.153`, `185.199.110.153`, `185.199.111.153` (proxy **DNS
-   only**, nube gris — el proxy naranja rompe la verificación/HTTPS de
-   GitHub Pages); CNAME `www` → `ccramirez20.github.io` (también DNS only).
-2. GitHub: repo → Settings → Pages → Custom domain → `acabsnacks.com` →
-   esperar verificación DNS → activar "Enforce HTTPS".
+El sitio está EN VIVO en **https://acabsnacks.com** (dominio propio, comprado
+y con DNS en Cloudflare — 4 registros A en `@` a las IPs de GitHub Pages +
+CNAME `www`, todos en modo DNS only). GitHub Pages: rama `main`, raíz,
+`CNAME` en el repo, "Enforce HTTPS" activo. Se redespliega solo con cada push
+a `main`. La URL vieja `https://ccramirez20.github.io/acab-landing/` sigue
+funcionando pero ya no es la oficial.
 
 ## Próxima sesión — ideas pendientes (ninguna urgente)
 
