@@ -37,20 +37,22 @@ completa en un `<details>` (datos transcritos de los empaques en `brand/`).
 El sitio está EN VIVO en https://ccramirez20.github.io/acab-landing/ (GitHub
 Pages, rama `main`, raíz; se redespliega solo con cada push a `main`).
 
+**Dominio propio: `acabsnacks.com`** (comprado en Cloudflare, dueño del
+proyecto). Archivo `CNAME` en la raíz del repo ya apunta ahí, y `og:image`/
+`og:url` en `index.html` ya usan `https://acabsnacks.com/`. Falta del lado de
+Cloudflare/GitHub (fuera del repo, lo hace el dueño):
+1. DNS en Cloudflare: 4 registros A en `@` → `185.199.108.153`,
+   `185.199.109.153`, `185.199.110.153`, `185.199.111.153` (proxy **DNS
+   only**, nube gris — el proxy naranja rompe la verificación/HTTPS de
+   GitHub Pages); CNAME `www` → `ccramirez20.github.io` (también DNS only).
+2. GitHub: repo → Settings → Pages → Custom domain → `acabsnacks.com` →
+   esperar verificación DNS → activar "Enforce HTTPS".
+
 ## Próxima sesión — ideas pendientes (ninguna urgente)
 
-1. **Dominio propio** (`acabsnacks.*`, comprado en Cloudflare Registrar u
-   otro registrador — pago/cuenta del usuario, no lo hace Claude). Una vez
-   comprado:
-   1. Crear archivo `CNAME` en la raíz del repo con el dominio elegido
-      (ej. `acabsnacks.com`).
-   2. En el DNS del registrador: 4 registros A en `@` → `185.199.108.153`,
-      `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; y un CNAME
-      de `www` → `ccramirez20.github.io`.
-   3. GitHub: repo → Settings → Pages → Custom domain, escribir el dominio,
-      esperar propagación DNS y activar "Enforce HTTPS".
-   4. Actualizar `og:image` y `og:url` en `index.html` (`<head>`) al dominio
-      nuevo.
+1. Correo `@acabsnacks.com` (Cloudflare Email Routing para reenvío gratis, o
+   un proveedor de buzón real como Google Workspace/Zoho si necesitan enviar
+   desde esa dirección) — en curso con el dueño.
 2. Opcional: fotos reales de los empaques físicos (las tarjetas usan los sellos
    circulares recortados de los empaques — `assets/img/sello-*.png`; los posts
    cómicos van como stickers en el hero y en "¿Quiénes somos?").
