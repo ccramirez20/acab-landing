@@ -62,3 +62,13 @@ saludables") ya están en el `<head>` de `index.html`.
 
 - Mantener todo lo editable por los dueños (datos, colores) agrupado y comentado.
 - Verificar cambios abriendo index.html en el navegador; no hay tests ni CI.
+
+## Agent skills
+
+### Issue tracker
+
+Issues en GitHub Issues (`gh`). See `docs/agents/issue-tracker.md`.
+
+### Domain docs
+
+Single-context. See `docs/agents/domain.md`.
