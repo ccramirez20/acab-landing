@@ -21,16 +21,12 @@ pedir directo por WhatsApp, sin carrito ni pasarela de pago.
 
 ### Stack
 
-HTML, CSS y JavaScript **puros**, sin frameworks ni paso de build — un solo `index.html`.
-Desplegado en **GitHub Pages** con dominio propio (`acabsnacks.com`) vía Cloudflare DNS.
+HTML, CSS y JavaScript **puros**, sin frameworks ni paso de build: cuatro páginas, `estilos.css` y `sitio.js`.
+Desplegado en **Cloudflare Pages** con dominio propio (`acabsnacks.com`).
 
 ### Ver el proyecto localmente
 
-```bash
-git clone https://github.com/ccramirez20/acab-landing.git
-```
-
-Abrir `index.html` en el navegador. No requiere instalación ni servidor.
+Abrir `web/index.html` en el navegador. No requiere instalación ni servidor.
 
 ### Contexto
 
@@ -54,16 +50,12 @@ order directly through WhatsApp — no cart, no payment gateway.
 
 ### Stack
 
-Plain **HTML, CSS and JavaScript**, no frameworks or build step — a single `index.html`.
-Deployed on **GitHub Pages** with a custom domain (`acabsnacks.com`) via Cloudflare DNS.
+Plain **HTML, CSS and JavaScript**, no frameworks or build step: four pages, `estilos.css` and `sitio.js`.
+Deployed on **Cloudflare Pages** with a custom domain (`acabsnacks.com`).
 
 ### Run it locally
 
-```bash
-git clone https://github.com/ccramirez20/acab-landing.git
-```
-
-Open `index.html` in your browser. No install or server needed.
+Open `web/index.html` in your browser. No install or server needed.
 
 ### Context
 

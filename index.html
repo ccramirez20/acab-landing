@@ -3,185 +3,43 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ACAB — All Chucherías Are Bastards | Snacks saludables</title>
+<title>ACAB: All Chucherías Are Bastards | Snacks saludables</title>
 <meta name="description" content="ACAB: snacks saludables con actitud. Fruta real, sin azúcar añadida, cero cuento. Pide por WhatsApp.">
 <link rel="icon" href="assets/img/logo.png" type="image/png">
-
-<!-- Open Graph / vista previa al compartir el link (WhatsApp, Instagram...) -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="ACAB - Snacks saludables">
+<meta property="og:title" content="ACAB: All Chucherías Are Bastards | Snacks saludables">
 <meta property="og:description" content="ACAB: snacks saludables con actitud. Fruta real, sin azúcar añadida, cero cuento. Pide por WhatsApp.">
-<meta property="og:image" content="https://acabsnacks.com/assets/img/logo.png">
+<meta property="og:image" content="https://acabsnacks.com/assets/img/poster-banano.jpg">
 <meta property="og:url" content="https://acabsnacks.com/">
 <meta name="twitter:card" content="summary_large_image">
-
-<!-- ============================================================
-  DATOS EDITABLES POR LOS DUEÑOS:
-  - WHATSAPP: constante en el <script> al final.
-  - PRECIOS: los <p class="precio"> y la .nota-pedido (cambian en 2027).
-  - Colores: variables :root. Fuente de todo lo demás: brand/.
-  - Dominio: acabsnacks.com (archivo CNAME en la raíz del repo).
-============================================================ -->
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
-
-<style>
-  :root{
-    /* Colores de marca (muestreados de brand/: logo y empaques) */
-    --tinta:   #412C27;   /* marrón chocolate (logo empaque) */
-    --papel:   #E7D8B8;   /* crema (sello Capitán Banano) */
-    --tape:    #FCB93A;   /* amarillo piña */
-    --acento:  #EA6627;   /* naranja logo */
-    --wa:      #1fa855;   /* verde WhatsApp */
-  }
-  *{ box-sizing:border-box; margin:0; padding:0; }
-  html{ scroll-behavior:smooth; }
-  section[id]{ scroll-margin-top:130px; } /* altura del header pegajoso */
-  body{
-    font-family:"Baloo 2", system-ui, sans-serif;
-    background:var(--papel);
-    color:var(--tinta);
-    line-height:1.6;
-    overflow-x:hidden; /* la cinta rotada sobresale del viewport */
-  }
-  h1,h2,.display{ font-family:"Permanent Marker", "Baloo 2", sans-serif; line-height:1.1; text-transform:uppercase; }
-  a{ color:inherit; }
-  :focus-visible{ outline:3px solid var(--acento); outline-offset:3px; }
-  .wrap{ max-width:960px; margin:0 auto; padding:0 1.25rem; }
-  .acab-inline{ height:2.1em; width:auto; vertical-align:-.65em; }
-
-  /* ---------- header ---------- */
-  header{
-    position:sticky; top:0; z-index:10;
-    background:var(--tinta); color:var(--papel);
-    border-bottom:4px solid var(--tape);
-  }
-  header .wrap{ display:flex; align-items:center; justify-content:space-between; padding:.75rem 1.25rem; }
-  .logo img{ display:block; height:100px; width:auto; padding:.4rem 0; }
-  @media (max-width:560px){
-    .logo img{ height:56px; }
-    nav{ gap:.75rem; }
-    nav a{ font-size:.85rem; }
-  }
-  nav{ display:flex; gap:1.25rem; align-items:center; }
-  nav a{ text-decoration:none; font-weight:600; font-size:.95rem; }
-  nav a:hover{ color:var(--tape); }
-
-  /* ---------- hero ---------- */
-  .hero{ padding:5rem 0 4rem; }
-  .hero .wrap{ display:grid; grid-template-columns:1.3fr 1fr; gap:2.5rem; align-items:center; }
-  @media (max-width:700px){ .hero .wrap{ grid-template-columns:1fr; } }
-  .hero .eyebrow{
-    display:inline-block; background:var(--tinta); color:var(--tape);
-    font-weight:600; font-size:.85rem; letter-spacing:.15em; text-transform:uppercase;
-    text-align:center; padding:.25rem .75rem; margin-bottom:1.5rem; transform:rotate(-1.5deg);
-  }
-  .hero h1{ font-size:clamp(2.4rem, 7vw, 4.5rem); max-width:14ch; }
-  .hero h1 span{ color:var(--acento); }
-  .hero p{ max-width:52ch; margin:1.5rem 0 2rem; font-size:1.1rem; }
-  .btn{
-    display:inline-block; text-decoration:none; font-weight:600;
-    background:var(--tinta); color:var(--papel);
-    padding:.9rem 1.6rem; border:3px solid var(--tinta);
-  }
-  .btn:hover{ background:var(--papel); color:var(--tinta); }
-
-  /* ---------- cinta marquee (elemento firma) ---------- */
-  .tape{
-    background:var(--tape); color:var(--tinta);
-    border-top:3px solid var(--tinta); border-bottom:3px solid var(--tinta);
-    transform:rotate(-1.2deg) scale(1.02);
-    overflow:hidden; white-space:nowrap; padding:.5rem 0 .5rem 1.5rem;
-    font-family:"Permanent Marker",sans-serif; text-transform:uppercase; font-size:1rem; letter-spacing:.08em;
-  }
-  .tape span{ display:inline-block; animation:cinta 55s linear infinite; }
-  @keyframes cinta{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
-  @media (prefers-reduced-motion: reduce){
-    .tape span{ animation:none; }
-    html{ scroll-behavior:auto; }
-  }
-
-  /* ---------- productos ---------- */
-  .productos{ padding:5rem 0; }
-  .productos h2, .nosotros h2{ font-size:clamp(1.8rem,4vw,2.6rem); margin-bottom:2.5rem; }
-  .grid{ display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:start; }
-  @media (max-width:700px){ .grid{ grid-template-columns:1fr; } }
-  .producto{
-    border:3px solid var(--tinta); background:#fff;
-    display:flex; flex-direction:column;
-    box-shadow:8px 8px 0 var(--tinta);
-  }
-  .producto > img{
-    aspect-ratio:1; width:65%; max-width:260px; object-fit:cover;
-    margin:1.5rem auto 0; border-radius:50%;
-    border:3px solid var(--tinta);
-  }
-  .producto .info{ padding:1.5rem; display:flex; flex-direction:column; gap:.75rem; flex:1; }
-  .producto h3{ font-family:"Permanent Marker",sans-serif; text-transform:uppercase; font-size:1.3rem; }
-  .precio{ font-family:"Permanent Marker",sans-serif; color:var(--acento); font-size:1.2rem; margin-top:auto; }
-  .precio small{ font-family:"Baloo 2",sans-serif; color:var(--tinta); font-weight:600; font-size:.75em; }
-
-  /* etiqueta nutricional desplegable */
-  .nutri{ font-size:.85rem; border:2px solid var(--tinta); }
-  .nutri summary{ cursor:pointer; font-weight:600; padding:.5rem .75rem; }
-  .nutri[open] summary{ border-bottom:2px solid var(--tinta); }
-  .nutri > div{ padding:.5rem .75rem .75rem; }
-  .nutri table{ width:100%; border-collapse:collapse; margin:.25rem 0 .5rem; }
-  .nutri td, .nutri th{ padding:.15rem 0; border-bottom:1px solid #d9cfb5; text-align:left; }
-  .nutri td:nth-child(2), .nutri th:nth-child(2),
-  .nutri td:nth-child(3), .nutri th:nth-child(3){ text-align:right; white-space:nowrap; }
-
-  .nota-pedido{
-    margin-top:2rem; padding:1.25rem 1.5rem;
-    background:var(--tape); border:3px solid var(--tinta);
-    box-shadow:8px 8px 0 var(--tinta); font-weight:600;
-  }
-  .nota-pedido strong{ display:block; font-family:"Permanent Marker",sans-serif; font-size:1.35rem; font-weight:400; }
-  .btn-wa{
-    display:flex; align-items:center; justify-content:center; gap:.5rem;
-    text-decoration:none; font-weight:600;
-    background:var(--wa); color:#fff; padding:.85rem 1rem;
-    border:3px solid var(--tinta);
-  }
-  .btn-wa:hover{ filter:brightness(1.1); }
-  .btn-wa svg{ width:1.2em; height:1.2em; fill:currentColor; }
-
-  /* ---------- nosotros ---------- */
-  .nosotros{ background:var(--tinta); color:var(--papel); padding:5rem 0; }
-  .nosotros .wrap{ display:grid; grid-template-columns:1.4fr 1fr; gap:2.5rem; align-items:center; }
-  @media (max-width:700px){ .nosotros .wrap{ grid-template-columns:1fr; } }
-  .nosotros h2 span{ color:var(--tape); }
-  .nosotros p{ max-width:60ch; font-size:1.05rem; }
-  .sticker{
-    width:100%; max-width:320px; justify-self:center;
-    border:3px solid var(--tinta); box-shadow:8px 8px 0 var(--tape);
-    transform:rotate(2deg);
-  }
-  .sticker--izq{ transform:rotate(-2deg); box-shadow:8px 8px 0 var(--acento); }
-
-  /* instagram footer */
-  .ig{ display:inline-flex; align-items:center; gap:.45rem; font-weight:700; font-size:1.15rem; text-decoration:none; }
-  .ig:hover{ color:var(--acento); }
-  .ig svg{ width:1.5em; height:1.5em; fill:var(--acento); }
-
-  /* ---------- footer ---------- */
-  footer{ padding:3rem 0; }
-  footer .wrap{ display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; align-items:center; }
-  footer small{ color:#6b6250; }
-</style>
+<link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
+<!-- Encabezado y pie se repiten a mano en las 4 páginas (sitio sin build): un cambio va en todas. -->
 <header>
   <div class="wrap">
-    <a class="logo" href="#"><img src="assets/img/logo.png" alt="ACAB — All Chucherías Are Bastards"></a>
-    <nav>
-      <a href="#productos">Productos</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#" data-wa data-msg="Hola, quiero hacer un pedido de 10 unidades: 5 Capitán Banano y 5 Capitana Piña">Pedir</a>
+    <a class="logo" href="index.html"><img src="assets/img/logo.png" width="768" height="412" alt="ACAB, All Chucherías Are Bastards. Ir al inicio"></a>
+    <nav class="nav-ancha" aria-label="Principal">
+        <a href="index.html" aria-current="page">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="artistas.html">Artistas</a>
+        <a href="merch.html">Merch</a>
+        <a class="nav-pedir" href="#" data-wa data-msg="Hola, quiero hacer un pedido de 10 unidades: 5 Capitán Banano y 5 Capitana Piña">Pedir</a>
     </nav>
+    <details class="nav-movil">
+      <summary>Menú</summary>
+      <nav aria-label="Principal, móvil">
+        <a href="index.html" aria-current="page">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="artistas.html">Artistas</a>
+        <a href="merch.html">Merch</a>
+        <a class="nav-pedir" href="#" data-wa data-msg="Hola, quiero hacer un pedido de 10 unidades: 5 Capitán Banano y 5 Capitana Piña">Pedir</a>
+      </nav>
+    </details>
   </div>
 </header>
 
@@ -189,28 +47,31 @@
   <section class="hero">
     <div class="wrap">
       <div>
-        <p class="eyebrow">Snacks saludables · Hechos con amor y revolución</p>
-        <h1>All Chucherías Are <span>Bastards</span></h1>
-        <p><img class="acab-inline" src="assets/img/logo.png" alt="ACAB"> es snack
-        saludable con actitud: fruta real, sin azúcar añadida, sin conservantes, cero cuento.</p>
-        <a class="btn" href="#productos">Ver los productos ↓</a>
+        <p class="eyebrow">Snacks saludables hechos con amor y revolución</p>
+        <h1>All Chucherías Are Bastards</h1>
+        <p class="bajada"><img class="acab-inline" src="assets/img/logo.png" width="768" height="412" alt="ACAB"> es snack saludable con actitud: fruta real, sin azúcar añadida, sin conservantes, cero cuento.</p>
+        <a class="btn" href="#productos">Ver los productos</a>
       </div>
-      <img class="sticker sticker--izq" src="assets/img/capitan-banano-post.jpg"
-        alt="Capitán Banano aplastando una bolsa de papitas">
+      <div class="cartel cartel--izq">
+        <img src="assets/img/poster-banano.jpg" width="1046" height="1200" alt="Póster de ACAB: Capitán Banano, con gorra y chaleco de jean, pisa una bolsa de papitas">
+      </div>
     </div>
   </section>
 
-  <div class="tape" aria-hidden="true">
+  <div class="tape-marco" aria-hidden="true"><div class="tape">
     <span>ALL CHUCHERÍAS ARE BASTARDS ★ SIN AZÚCAR AÑADIDA ★ SIN #@*&amp;!% ★ FRUTA REAL ★ ALL CHUCHERÍAS ARE BASTARDS ★ SIN AZÚCAR AÑADIDA ★ SIN #@*&amp;!% ★ FRUTA REAL ★ ALL CHUCHERÍAS ARE BASTARDS ★ SIN AZÚCAR AÑADIDA ★ SIN #@*&amp;!% ★ FRUTA REAL ★ ALL CHUCHERÍAS ARE BASTARDS ★ SIN AZÚCAR AÑADIDA ★ SIN #@*&amp;!% ★ FRUTA REAL ★&nbsp;</span>
-  </div>
+  </div></div>
 
-  <section class="productos" id="productos">
+  <section class="seccion" id="productos">
     <div class="wrap">
       <h2>Los productos</h2>
       <div class="grid">
 
         <article class="producto">
-          <img src="assets/img/sello-banano.png" alt="Sello de Capitán Banano: un banano con gorra de capitán y bigote">
+          <div class="foto-marco">
+            <img class="foto-producto" src="assets/img/producto-banano.jpg" width="640" height="928" loading="lazy" alt="Bolsa de Capitán Banano, 50 g: rodajas de banano con chocolate vistas por la ventana del empaque kraft">
+            <img class="sello-producto" src="assets/img/sello-banano.png" width="576" height="576" alt="Sello de Capitán Banano: un banano con gorra de capitán y bigote">
+          </div>
           <div class="info">
             <h3>Capitán Banano</h3>
             <p>Banano con chocolate 70%, endulzado con eritritol y stevia — sí, leíste
@@ -248,7 +109,10 @@
         </article>
 
         <article class="producto">
-          <img src="assets/img/sello-pina.png" alt="Sello de Capitana Piña: una piña con gorra de capitana">
+          <div class="foto-marco">
+            <img class="foto-producto" src="assets/img/producto-pina.jpg" width="640" height="974" loading="lazy" alt="Bolsa de Capitana Piña, 35 g: trozos de piña deshidratada con canela vistos por la ventana del empaque naranja">
+            <img class="sello-producto" src="assets/img/sello-pina.png" width="576" height="576" alt="Sello de Capitana Piña: una piña con gorra de capitana">
+          </div>
           <div class="info">
             <h3>Capitana Piña</h3>
             <p>Piña deshidratada con canela. Dos ingredientes, nada más. Sin azúcar
@@ -293,25 +157,60 @@
     </div>
   </section>
 
-  <section class="nosotros" id="nosotros">
+  <section class="oscura" id="juego">
     <div class="wrap">
-      <div>
-        <h2>¿Quiénes <span>somos</span>?</h2>
-        <p>En <img class="acab-inline" src="assets/img/logo.png" alt="ACAB"> nada es
-        cuento. <strong>Todo es REAL</strong>: cero conservantes, cero azúcar añadida.
-        Fruta pura con su azúcar natural, con la fibra, los minerales y las vitaminas
-        para cargar tu cuerpo de energía. Sin basura, sin compromisos. El sistema no
-        funciona y estamos aquí para cambiarlo. ¡Bienvenidos a una nueva forma de
-        comer snacks!</p>
+      <h2>El juego</h2>
+      <p class="texto juego-intro">Pelea 1 contra 1 con dibujos de los años 30 y humor bogotano. La Revolución contra el Departamento de Chucherías, en tu celular. Gratis, sin anuncios y sin compras.</p>
+      <div class="cartelera">
+        <div class="bando-col col-rev">
+          <h3>La Revolución</h3>
+          <div class="dupla">
+            <article class="luchador">
+              <img src="assets/img/retrato-banano.jpg" width="560" height="560" loading="lazy" alt="Retrato de Capitán Banano">
+              <div><strong>Capitán Banano</strong><span>Líder de la Revolución</span></div>
+            </article>
+            <article class="luchador">
+              <img src="assets/img/retrato-pina.jpg" width="560" height="560" loading="lazy" alt="Retrato de Capitana Piña">
+              <div><strong>Capitana Piña</strong><span>Estratega y segunda al mando</span></div>
+            </article>
+          </div>
+        </div>
+        <div class="vs" aria-hidden="true">VS</div>
+        <div class="bando-col col-depto">
+          <h3>Departamento de Chucherías</h3>
+          <div class="dupla">
+            <article class="luchador">
+              <img src="assets/img/retrato-gaseoso.jpg" width="560" height="560" loading="lazy" alt="Retrato de General Gaseoso">
+              <div><strong>General Gaseoso</strong><span>Jefe del Departamento de Chucherías</span></div>
+            </article>
+            <article class="luchador">
+              <img src="assets/img/retrato-paqueton.jpg" width="560" height="560" loading="lazy" alt="Retrato de Sargento Paquetón">
+              <div><strong>Sargento Paquetón</strong><span>Encargado del área de Paquetes</span></div>
+            </article>
+          </div>
+        </div>
       </div>
-      <img class="sticker" src="assets/img/capitana-pina.jpg" alt="Capitana Piña persiguiendo cubos de azúcar con un bate de canela">
+      <p class="descarga"><strong>Descarga para Android:</strong> <span class="proximamente" data-apk>Próximamente</span></p>
+    </div>
+  </section>
+
+  <section class="seccion" id="nosotros">
+    <div class="wrap dos-col">
+      <div>
+        <h2>¿Quiénes somos?</h2>
+        <p class="texto">En <img class="acab-inline" src="assets/img/logo.png" width="768" height="412" alt="ACAB"> nada es cuento. <strong>Todo es REAL</strong>: cero conservantes, cero azúcar añadida. Fruta pura con su azúcar natural, con la fibra, los minerales y las vitaminas para cargar tu cuerpo de energía. Sin basura, sin compromisos. El sistema no funciona y estamos aquí para cambiarlo. ¡Bienvenidos a una nueva forma de comer snacks!</p>
+        <a class="btn" href="nosotros.html">Conocer a los dos bandos</a>
+      </div>
+      <div class="cartel">
+        <img src="assets/img/poster-pina.jpg" width="961" height="1200" loading="lazy" alt="Póster de ACAB: Capitana Piña persigue cubos de azúcar con un bate de canela">
+      </div>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <a class="btn-wa" href="#" data-wa data-msg="Hola, quiero hacer un pedido de 10 unidades: 5 Capitán Banano y 5 Capitana Piña" style="display:inline-flex">
+    <a class="btn-wa btn-inline" href="#" data-wa data-msg="Hola, quiero hacer un pedido de 10 unidades: 5 Capitán Banano y 5 Capitana Piña">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-2-1.2 7.5 7.5 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4a.5.5 0 0 0 0-.4c0-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.1 5 5 0 0 0 1 2.7 11.4 11.4 0 0 0 4.4 3.9 14.8 14.8 0 0 0 1.5.5 3.6 3.6 0 0 0 1.6.1 2.7 2.7 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.2-.2-.4-.3Z"/></svg>
       WhatsApp
     </a>
@@ -323,17 +222,11 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1.8 2 6.7 5.5a1 1 0 0 0 1.2 0L19.4 7H4.8ZM4 8.4V17h16V8.4l-6.5 5.3a2.8 2.8 0 0 1-3.4 0L4 8.4Z"/></svg>
       contacto@acabsnacks.com
     </a>
-    <small>© 2026 <img class="acab-inline" src="assets/img/logo.png" alt="ACAB"> · Una nueva forma de comer snacks</small>
+    <small>© 2026 <img class="acab-inline" src="assets/img/logo.png" width="768" height="412" alt="ACAB"> Una nueva forma de comer snacks</small>
   </div>
 </footer>
 
-<script>
-  // Código de país + número, sin "+" ni espacios.
-  const WHATSAPP = "573124931789";
-  document.querySelectorAll("[data-wa]").forEach(a => {
-    a.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(a.dataset.msg)}`;
-  });
-</script>
+<script src="sitio.js"></script>
 
 </body>
 </html>
